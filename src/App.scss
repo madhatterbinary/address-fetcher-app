@@ -1,17 +1,14 @@
 @import 'src/scss/base/colors.scss';
 @import 'src/scss/base/font-families.scss';
+@import "src/scss/base/mediaqueries.scss";
+html, body {width: auto!important; overflow-x: hidden!important} 
 
-html {
-  padding: 0; margin: 0;
-  min-height: 100%;
-}
 body{
   margin: 0;
   padding: 0;
-  width: 100%;
   color: $white;
   background: linear-gradient(90deg, $secondary, $primary 70%);
-  height: 100%;
+  min-height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -47,6 +44,21 @@ h3 {
   text-align: left;
   margin-top: 19px;
   margin-bottom: 19px;
+  margin-left: 15px;
+  @include media(tabletUp) {
+    margin-left: 0px;
+  }
+  @include media(desktopUp) {
+    margin-left: 0px;
+  }
+  @include media(largeDesktopUp) {
+    margin-left: 0px;
+  }
+}
+.address-select, .address-details {
+  h3 {
+    margin-left: 0px;
+  }
 }
 .main-header {
   margin-top:65px;
@@ -61,12 +73,41 @@ hr {
 .main-header, 
 .time-at-address, 
 .postcode-search,
-.postcode-search,
 .address-select,
 .address-details,
 .address-added, .address-form {
   max-width: 570px;
+  @include media(mobiletUp) {
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include media(tabletUp) {
+    width: 100%;
+  }
+  @include media(desktopUp) {
+    width: 100%;
+  }
+  @include media(largeDesktopUp) {
+    width: 100%;
+  }
+}
+.postcode-search {
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.address-details {
+  width: 95%;
+  @include media(tabletUp) {
+    width: 95%;
+  }
+  @include media(desktopUp) {
+    width: 100%;
+  }
+  @include media(largeDesktopUp) {
+    width: 100%;
+  }
 }
 .time-at-address, .postcode-search {
   margin-top:4px;
@@ -91,6 +132,18 @@ hr {
   align-self: center;
   margin-top: 50px;
   cursor: pointer;
+  @include media(mobiletUp) {
+    width: 314px;
+  }
+  @include media(tabletUp) {
+    width: 424px;
+  }
+  @include media(desktopUp) {
+    width: 424px;
+  }
+  @include media(largeDesktopUp) {
+    width: 424px;
+  }
 }
 
 
