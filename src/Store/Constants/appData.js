@@ -1,0 +1,5 @@
+export const LOADING_ADDRESS_DATA_PENDING = 'LOADING_ADDRESS_DATA_PENDING';
+export const LOADING_ADDRESS_DATA_SUCCESS = 'LOADING_ADDRESS_DATA_SUCCESS';
+export const LOADING_ADDRESS_DATA_FAIL = 'LOADING_ADDRESS_DATA_FAIL';
+export const APY_KEY = 'd2CFjHGLvUyAn7ZhPpR9eQ30092';
+export const API_URL = 'https://api.getAddress.io/autocomplete/';

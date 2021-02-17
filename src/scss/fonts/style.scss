@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Croogla 4F';
+    src: local('Croogla 4F Regular'), local('Croogla-4F-Regular'),
+        url('Croogla4F.woff2') format('woff2'),
+        url('Croogla4F.woff') format('woff'),
+        url('Croogla4F.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Cocogoose-Light';
+    src:url('Cocogoose-Light.ttf.woff') format('woff'),
+        url('Cocogoose-Light.ttf.svg#Cocogoose-Light') format('svg'),
+        url('Cocogoose-Light.ttf.eot'),
+        url('Cocogoose-Light.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,159 @@
+
+  @mixin media($screen) {
+    @if $screen == mobile {
+      @media (min-width: 620px) {
+        @content;
+      }
+    } @else if $screen == tablet or $screen == mobiletUp {
+        @media (min-width: 300px) {
+          @content;
+        }
+      } @else if $screen == tablet or $screen == tabletUp {
+      @media (min-width: 768px) {
+        @content;
+      }
+    } @else if $screen == tabletOnly {
+      @media (min-width: 1024px) and (max-width: 1280px) {
+        @content;
+      }
+    } @else if $screen == desktop or $screen == desktopUp {
+      @media (min-width: 1280px) {
+        @content;
+      }
+    } @else if $screen == largeDesktopUp {
+      @media (min-width: 1920px) {
+        @content;
+      }
+    } @else if $screen == tabletDown {
+      @media (max-width: 767px) {
+        @content;
+      }
+    } @else if $screen == desktopDown {
+      @media (max-width: 1279px) {
+        @content;
+      }
+    } @else if $screen == smallTablet {
+      @media (min-device-width: 1023px) and (max-device-width: 1024px) {
+        @content;
+      }
+    } @else if $screen == tabletAndDown {
+      @media (max-width: 1024px) {
+        @content;
+      }
+    } @else if $screen == largeDesktopDown {
+      @media (max-width: 1919px) {
+        @content;
+      }
+    } @else if $screen == onlyTabletDashboard {
+      @media (max-width: 54.8571em),
+        only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 73.1428em) and (max-device-width: 95.4285em) and (min-device-width: 54.8571em) and (orientation: portrait) {
+        @content;
+      }
+    } @else if $screen == largeUpDashboard {
+      @media all and (max-width: 110.7142em) {
+        @content;
+      }
+    } @else if $screen == smallDashboard {
+      @media (max-width: 29.6428em) {
+        @content;
+      }
+    }
+  }
+  
+  @mixin burger-menu() {
+    @media only screen and (min-width: 1180px) {
+      @content;
+    }
+  }
+  @mixin views {
+    @content;
+  
+    @each $class, $breakpoint in $breakpoints {
+      &#{$class} {
+        @include media($breakpoint) {
+          @content;
+        }
+      }
+    }
+  }
+  
+  @mixin switchViews($props) {
+    @each $class, $breakpoint in $breakpoints {
+      &#{$class} {
+        @each $prop, $states in $show-props {
+          @each $state, $value in $states {
+            @if $state == inactive {
+              #{$prop}: $value;
+            } @else {
+              @include media($breakpoint) {
+                #{$prop}: $value;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @mixin media-retina() {
+    @media (-webkit-min-device-pixel-ratio: 1.5),
+      (min--moz-device-pixel-ratio: 1.5),
+      (-o-min-device-pixel-ratio: 3/2),
+      (min-resolution: 1.5dppx) {
+      @content;
+    }
+  }
+  
+  $min_width: 375px;
+  $max_width: 1920px;
+  
+  @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+    @each $property in $properties {
+      #{$property}: $min-value;
+    }
+    @media screen and (min-width: $min-vw) {
+      @each $property in $properties {
+        #{$property}: calc(
+          #{$min-value} +
+            #{strip-unit($max-value - $min-value)} *
+            (100vw - #{$min-vw}) /
+            #{strip-unit($max-vw - $min-vw)}
+        );
+      }
+    }
+    @media screen and (min-width: $max-vw) {
+      @each $property in $properties {
+        #{$property}: $max-value;
+      }
+    }
+  }
+  
+  //flexbox
+  
+  @mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  //transform  all browser
+  @mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+  }
+  
+  @mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+  }
+  
+  @mixin mobileLandscapeOnly() {
+    @media only screen and (min-device-width: 375px) and (max-device-width: 996px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      @content;
+    }
+  }
+  

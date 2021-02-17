@@ -1,0 +1,196 @@
+@import 'src/scss/base/colors.scss';
+@import 'src/scss/base/font-families.scss';
+@import "src/scss/base/mediaqueries.scss";
+button, input, select, textarea {
+    outline: none;
+}
+
+form {
+    max-width: 500px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    max-width: inherit;
+    box-sizing: border-box;
+    input, select {
+        font-weight: 600;
+    }
+}
+form select {
+    flex: 1;
+    font-size: 17px;
+    padding: 14px 8px;
+    border: 1px solid $white;
+    background: transparent;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    color: $white;
+    max-width: 570px;
+    background: url(../../assets/chevron-down.png) no-repeat right transparent;
+    -webkit-appearance: none;
+    background-position-x: right;
+    padding-right: 15px;
+    background-origin: content-box;
+    background-size: 15px 9px;
+    text-align-last:center;
+    font-weight: 600;
+    @include media(mobiletUp) {
+        max-width: 570px;
+    }
+    @include media(tabletUp) {
+        max-width: 570px;
+
+    }
+    @include media(desktopUp) {
+        max-width: 277px;
+    }
+    @include media(largeDesktopUp) {
+        max-width: 277px;
+    }
+}
+
+.select-wrapper {
+    display: flex;
+    flex-flow: column;
+}
+.select-wrapper-year-month {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    @include media(mobiletUp) {
+        flex-flow: column;
+    }
+    @include media(tabletUp) {
+        flex-flow: column;
+    }
+    @include media(desktopUp) {
+        flex-flow: row;
+    }
+    @include media(largeDesktopUp) {
+        flex-flow: row;
+    }
+}
+
+.select-wrapper-year-month > * {
+    margin: 0;
+    @include media(mobiletUp) {
+        margin: 1em 0;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    @include media(tabletUp) {
+        margin: 1em 0;
+    }
+    @include media(desktopUp) {
+        margin: 0;
+    }
+    @include media(largeDesktopUp) {
+        margin: 0;
+    }
+}
+.search-input {
+    padding: 14px 8px;
+    border: 1px solid $white;
+    text-align-last: left;
+    background: url(../../assets/magnifying-glass.png) no-repeat right transparent;
+    background-size: 16px 16px;
+    width: 97%;
+    flex: 1;
+    font-size: 17px;
+    -webkit-appearance: none;
+    color:$white;
+    max-width: 570px;
+    background-position-x: right;
+    padding-right: 15px;
+    background-origin: content-box;
+    @include media(mobiletUp) {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    @include media(tabletUp) {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+.select-wrapper.addresses {
+    select {
+        flex: 1;
+        font-size: 17px;
+        border: 1px solid $white;
+        background: transparent;
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        color: $white;
+        width: 100%;
+        background: url(../../assets/chevron-down.png) no-repeat right transparent;
+        -webkit-appearance: none;
+        background-position-x: 540px;
+        background-size: 15px 9px;
+        text-align-last:left;
+        padding: 14px 8px;
+        max-width: 570px;
+        font-weight: 600;
+    }
+}
+.arrow-icon-divider {
+    background: url(../../assets/double-chevron.png) no-repeat right transparent;
+    background-size: 14px;
+    width: auto;
+    height: 57px;
+    background-position: center;
+}
+.address-details {
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+    input {
+        flex: 1;
+        font-size: 17px;
+        border: 1px solid $white;
+        background: transparent;
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        color: $white;
+        width: 100%;
+        -webkit-appearance: none;
+        background-size: 15px 9px;
+        text-align-last:left;
+        padding: 14px 8px;
+        width: 96.8%;
+    }
+}
+.address-box {
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px $white;
+    background-color: $dark-red;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 18px;
+    .address-line {
+        text-align: left;
+    }
+    :nth-child(1) {
+        padding-bottom: 10px;
+    }
+}
+.text-box-delete-icon {
+    background: url(../../assets/delete.png) no-repeat right transparent;
+    background-size: 19px;
+    width: 32px;
+    height: 19px;
+    border-color: transparent;
+    cursor: pointer;
+}
+.warning-box {
+    margin-bottom: 120px;
+    padding: 5px;
+}
+.warning, .input-error {
+    font-family: $font-family-base;
+}
